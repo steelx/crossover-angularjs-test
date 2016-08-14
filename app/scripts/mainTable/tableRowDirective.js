@@ -19,6 +19,7 @@ function tableRowDirective() {
       row: '=',
       state: '='
     },
+    transclude: true,
     link: function (scope) {
 
       switch (scope.state) {
@@ -39,7 +40,6 @@ function tableRowDirective() {
           break;
       }
 
-      console.log(_scope.className);
     }
   };
 }

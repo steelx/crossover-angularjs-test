@@ -1,15 +1,17 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-xs-1 col-sm-1" class="hidden-phone">ID</div>
+    <div class="col-xs-1 col-sm-1">ID</div>
     <div class="col-xs-1 col-sm-2">Owner</div>
-    <div class="col-xs-2 col-sm-2" class="hidden-phone">Time started</div>
-    <div class="col-xs-1 col-sm-1" class="hidden-phone">State</div>
-    <div class="col-xs-1 col-sm-1" class="hidden-phone">Metrics</div>
-    <div class="col-xs-1 col-sm-1" class="hidden-phone">Build</div>
-    <div class="col-xs-1 col-sm-1" class="hidden-phone">Unit Test</div>
-    <div class="col-xs-1 col-sm-1" class="hidden-phone">Funcational Test</div>
+    <div class="col-xs-2 col-sm-2">Time started</div>
+    <div class="col-xs-2 col-sm-2">State</div>
+    <div class="col-xs-1 col-sm-1">Metrics</div>
+    <div class="col-xs-1 col-sm-1">Build</div>
+    <div class="col-xs-1 col-sm-1">Unit Test</div>
+    <div class="col-xs-1 col-sm-1">Funcational Test</div>
   </div>
   <div>
-    <table-row ng-repeat="row in MainTableCtrl.stats" row="row" state="row.state"></table-row>
+    <table-row ng-repeat="row in MainTableCtrl.stats" row="row" state="row.state">
+      <p>Trans</p>
+    </table-row>
   </div>
 </div>
