@@ -12,19 +12,16 @@ angular
   .module('crossoverTestAjinkyaApp', [
     'ngRoute'
   ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+        templateUrl: 'scripts/mainTable/table.html',
+        controller: 'MainTableController',
+        controllerAs: 'MainTableCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);

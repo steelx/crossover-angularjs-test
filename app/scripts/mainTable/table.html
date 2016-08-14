@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-1 col-sm-1" class="hidden-phone">ID</div>
+    <div class="col-xs-1 col-sm-2">Owner</div>
+    <div class="col-xs-2 col-sm-2" class="hidden-phone">Time started</div>
+    <div class="col-xs-1 col-sm-1" class="hidden-phone">State</div>
+    <div class="col-xs-1 col-sm-1" class="hidden-phone">Metrics</div>
+    <div class="col-xs-1 col-sm-1" class="hidden-phone">Build</div>
+    <div class="col-xs-1 col-sm-1" class="hidden-phone">Unit Test</div>
+    <div class="col-xs-1 col-sm-1" class="hidden-phone">Funcational Test</div>
+  </div>
+  <div>
+    <table-row ng-repeat="row in MainTableCtrl.stats" row="row" state="row.state"></table-row>
+  </div>
+</div>

@@ -1,8 +1,9 @@
 <!doctype html>
 <html>
   <head>
+    <base href="/" />
     <meta charset="utf-8">
-    <title></title>
+    <title>Ajinkya Borade</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -59,6 +60,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
@@ -67,8 +69,9 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/mainTable/MainTable.js"></script>
+        <script src="scripts/mainTable/tableRowDirective.js"></script>
+        <script src="scripts/core/buildStatusService.js"></script>
         <!-- endbuild -->
 </body>
 </html>
