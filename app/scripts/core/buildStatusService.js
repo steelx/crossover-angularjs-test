@@ -56,7 +56,7 @@ function buildStatusService($q) {
       "metrics": {
         "test": 70,
         "maintainability": 73,
-        "security": 64,
+        "security": 74,
         "workmanship": 72
       },
       "build": {
@@ -83,7 +83,7 @@ function buildStatusService($q) {
       "metrics": {
         "test": 74,
         "maintainability": 77,
-        "security": 66,
+        "security": 76,
         "workmanship": 75
       },
       "build": {

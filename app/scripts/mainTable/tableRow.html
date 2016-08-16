@@ -1,12 +1,12 @@
-<div class="row table-row {{className}}">
+<div class="row table-row {{className}}" ng-click="showChart()">
   <div class="col-xs-1 col-sm-1"><span class="num" ng-bind="row.id"></span></div>
   <div class="col-xs-2 col-sm-2"><span class="name" ng-bind="row.owner"></span></div>
   <div class="col-xs-2 col-sm-2">{{row.time_started * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}</div>
   <div class="col-xs-2 col-sm-2" ng-bind="row.state"></div>
-  <div class="col-xs-1 col-sm-1"><span class="bar"></span></div>
-  <div class="col-xs-1 col-sm-1"><span class="bar"></span></div>
-  <div class="col-xs-1 col-sm-1"><span class="bar"></span></div>
-  <div class="col-xs-1 col-sm-1"><span class="bar"></span></div>
+  <div class="col-xs-1 col-sm-1"><span class="bar" ng-class="{'half': className == 'running'}"><i ng-show="row.metrics" ng-class="{'green': isMetrics, 'red': !isMetrics}"></i></span></div>
+  <div class="col-xs-1 col-sm-1"><span class="bar"><i ng-show="row.build" ng-class="{'green': isBuild, 'red': !isBuild}"></i></span></div>
+  <div class="col-xs-1 col-sm-1"><span class="bar"><i ng-show="row.unitTest" ng-class="{'green': isUnitTest, 'red': !isUnitTest}"></i></span></div>
+  <div class="col-xs-1 col-sm-1"><span class="bar"><i ng-show="row.functionalTest" ng-class="{'green': isfunctionalTest, 'red': !isfunctionalTest}"></i></span></div>
 
-  <div class="col-sm-12" ng-transclude></div>
+  <div class="col-sm-12" ng-transclude ng-show="isDisplayChart"></div>
 </div>

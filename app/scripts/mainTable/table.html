@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid table">
+  <div class="row thead">
     <div class="col-xs-1 col-sm-1">ID</div>
     <div class="col-xs-1 col-sm-2">Owner</div>
     <div class="col-xs-2 col-sm-2">Time started</div>
@@ -11,7 +11,12 @@
   </div>
   <div>
     <table-row ng-repeat="row in MainTableCtrl.stats" row="row" state="row.state">
-      <p>Trans</p>
+      <aside>
+        <p>{{row.metrics}}</p>
+        <p>{{row.build}}</p>
+        <p>{{row.unitTest}}</p>
+        <p>{{row.functionalTest}}</p>
+      </aside>
     </table-row>
   </div>
 </div>

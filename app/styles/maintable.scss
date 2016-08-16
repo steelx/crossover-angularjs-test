@@ -1,0 +1,72 @@
+@import url('//fonts.googleapis.com/css?family=Oswald:400');
+.table {
+  font-family: "Oswald", "Helvetica Newe", Helvetica, sans-serif;
+  color: #333;
+  border: 1px solid #6F9EB8;
+  background-color: #dadde2;
+}
+.thead {
+  font-size: 15px;
+  font-weight: 700;
+}
+.table-row {
+  font-size: 14px;
+  padding-top:5px;
+  border-bottom: 5px;
+
+  &.running {
+    background-color: #6F9EB8;
+    .bar i {
+      background-color: #2D86CA;
+    }
+  }
+
+  &.rejected {
+    background-color: #FFCECE;
+  }
+
+  &.accepted {
+    background-color: #4f932b;
+  }
+
+  &.complete {
+    background-color: #8de293;
+  }
+
+  &.pending {
+    background-color: #EAF6FE;
+    .bar i {
+      background-color: #EAF6FE;
+    }
+  }
+
+  .bar {
+    width: 40px;
+    height: 20px;
+    background-color: #cccccc;
+    display: block;
+    position: relative;
+    border: 1px solid #333333;
+
+    & i {
+      width: 40px;
+      height: 20px;
+      content: '';
+      position: absolute;
+
+      &.green {
+        background-color: #009821;
+      }
+      &.red {
+        background-color: #E54631;
+      }
+    }
+
+    &.half {
+      i {
+        display: block !important;
+        width: 25px;
+      }
+    }
+  }
+}
