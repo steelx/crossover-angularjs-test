@@ -12,24 +12,24 @@
   <div>
     <table-row ng-repeat="row in MainTableCtrl.stats" row="row" state="row.state">
       <aside class="chartRow row">
-        <div class="chartBlocks">
+        <div class="chartBlocks" ng-if="row.hasOwnProperty('metrics')">
           <h4>Metrics</h4>
           <metrics test="row.metrics.test" maintainability="row.metrics.maintainability" security="row.metrics.security" workmanship="row.metrics.workmanship"></metrics>
         </div>
 
-        <div class="chartBlocks">
+        <div class="chartBlocks" ng-if="row.hasOwnProperty('build')">
           <h4>Build</h4>
           <build debug="row.build.debug" release="row.build.release"></build>
         </div>
 
-        <div class="chartBlocks">
+        <div class="chartBlocks" ng-if="row.hasOwnProperty('unitTest')">
           <h4>Unit test</h4>
           <pie-chart total="row.unitTest.codeCount" passed="row.unitTest.passed"></pie-chart>
           <percentile-bar covered="row.unitTest.coveredPercent"></percentile-bar>
           <percentile-num total="row.unitTest.codeCount" passed="row.unitTest.passed" ></percentile-num>
         </div>
 
-        <div class="chartBlocks">
+        <div class="chartBlocks" ng-if="row.hasOwnProperty('functionalTest')">
           <h4>Functional test</h4>
           <pie-chart total="row.functionalTest.codeCount" passed="row.functionalTest.passed"></pie-chart>
           <percentile-bar total="row.functionalTest.codeCount" passed="row.functionalTest.passed" covered="row.functionalTest.coveredPercent"></percentile-bar>
