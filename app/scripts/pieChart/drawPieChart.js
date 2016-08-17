@@ -1,13 +1,12 @@
 /**
  * @ngdoc function
- * @name buildStatusService
+ * @name drawPieChart
  * @description
- * # buildStatusService.js
+ * # drawPieChart.js
  * Service of the crossoverTestAjinkyaApp to fetch data
  */
 angular.module('crossoverTestAjinkyaApp')
   .factory('drawPieChart', [drawPieChart]);
-
 
 function drawPieChart() {
 

@@ -1,5 +1,5 @@
 .bar {
-  fill: #98B406;
+  fill: #C6DFB5;
   height: 41px;
   transition: fill .3s ease;
   cursor: pointer;
@@ -16,12 +16,12 @@
   width: 90%;
   margin: 0 5%;
   svg {
-    background-color: #FFFFD7;
+    background-color: #F6CBAE;
   }
   &:hover,
   &:focus {
     .bar {
-      fill: #98B406;
+      fill: #C6DFB5;
     }
   }
 

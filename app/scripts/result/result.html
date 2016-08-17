@@ -1,0 +1,18 @@
+<div class="result">
+  <div class="passed" ng-if="isMetrics && isUnitTest && isfunctionalTest && !completed">
+    <p><i>Change Accepted</i></p>
+    <p><b>Auto Merged</b></p>
+    <button>Merge Build</button>
+  </div>
+
+  <div class="complete" ng-if="isMetrics && isUnitTest && isfunctionalTest && completed">
+    <p><b>Complete</b></p>
+    <button>Deploy</button>
+  </div>
+
+  <div class="reject" ng-if="!isMetrics || !isUnitTest || !isfunctionalTest">
+    <p><i>Change Rejected</i></p>
+    <p><b>Metrics Reduction</b></p>
+    <button>Find issues</button>
+  </div>
+</div>

@@ -2,8 +2,6 @@
 .table {
   font-family: "Oswald", "Helvetica Newe", Helvetica, sans-serif;
   color: #333;
-  border: 1px solid #6F9EB8;
-  background-color: #dadde2;
 }
 .thead {
   font-size: 15px;
@@ -12,29 +10,39 @@
 .table-row {
   font-size: 14px;
   padding-top:5px;
-  border-bottom: 5px;
+  margin: 5px 0;
 
   &.running {
-    background-color: #6F9EB8;
+    background-color: #EDF1F8;
+    background: -webkit-linear-gradient(left, #EDF1F8, #FEFFFF);
+    background: -moz-linear-gradient(left, #EDF1F8, #FEFFFF);
+    background: -ms-linear-gradient(left, #EDF1F8, #FEFFFF);
+    border: 1px solid #5E9CD3;
     .block i {
-      background-color: #2D86CA;
+      background-color: #5E9CD3;
     }
   }
 
   &.rejected {
-    background-color: #FFCECE;
+    background-color: #FBE4E4;
+    background: -webkit-linear-gradient(left, #FBE4E4, #FEFFFF);
+    background: -moz-linear-gradient(left, #FBE4E4, #FEFFFF);
+    background: -ms-linear-gradient(left, #FBE4E4, #FEFFFF);
+    border: 1px solid #CF4C54;
   }
 
+  &.complete,
   &.accepted {
-    background-color: #8bc34a;
-  }
-
-  &.complete {
-    background-color: #8de293;
+    background-color: #EEF3EC;
+    background: -webkit-linear-gradient(left, #EEF3EC, #FEFFFF);
+    background: -moz-linear-gradient(left, #EEF3EC, #FEFFFF);
+    background: -ms-linear-gradient(left, #EEF3EC, #FEFFFF);
+    border: 1px solid #90B478;
   }
 
   &.pending {
-    background-color: #EAF6FE;
+    background-color: #F3F7FB;
+    border: 1px solid #D4D4D4;
     .block i {
       background-color: #EAF6FE;
     }
@@ -43,10 +51,10 @@
   .block {
     width: 40px;
     height: 20px;
-    background-color: #cccccc;
+    background-color: #D8D8D8;
     display: block;
     position: relative;
-    border: 1px solid #333333;
+    border: 1px solid #D4D4D4;
     margin:2px 0 7px;
 
     & i {
@@ -80,7 +88,7 @@
     float: left;
     width: 18%;
     height: 250px;
-    border: 2px solid #D8D4B9;
+    border: 2px solid #72AC4D;
     margin: 1%;
     boz-sizing: border-box;
 

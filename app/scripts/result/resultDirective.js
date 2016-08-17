@@ -1,28 +1,26 @@
 /**
- * @ngdoc function
- * @name <table-row>
+ * @ngdoc directive
+ * @name <result>
  * @description
- * # tableRowDirective.js
+ * # resultDirective.js
  * Directive of the crossoverTestAjinkyaApp module
  */
 angular.module('crossoverTestAjinkyaApp')
-  .directive('tableRow', [tableRowDirective]);
+  .directive('result', [resultDirective]);
 
-function tableRowDirective() {
+function resultDirective() {
   'use strict';
 
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: 'scripts/mainTable/tableRow.html',
     scope: {
       row: '=',
       state: '='
     },
-    transclude: true,
+    templateUrl: 'scripts/result/result.html',
     link: function (scope) {
-      scope.isDisplayChart = false;
-      scope.showChart = showChart;
+      scope.completed = false;
 
       switch (scope.state) {
         case 'RUNNING':
@@ -36,6 +34,7 @@ function tableRowDirective() {
           break;
         case 'COMPLETE':
           displayBars('complete');
+          scope.completed = true;
           break;
         default:
           displayBars('pending');
@@ -48,20 +47,28 @@ function tableRowDirective() {
         if(scope.row.hasOwnProperty('metrics') && !isEmptyObj(scope.row.metrics)){
           if(scope.row.metrics && isPassing(scope.row.metrics, 'metrics')){
             scope.isMetrics = true;
+          } else {
+            scope.isMetrics = false;
           }
         }
         if(scope.row.hasOwnProperty('build') && !isEmptyObj(scope.row.build)){
           if(scope.row.build && isPassing(scope.row.build, 'build')){
             scope.isBuild = true;
+          } else {
+            scope.isBuild = false;
           }
         }
         if(scope.row.hasOwnProperty('unitTest') && !isEmptyObj(scope.row.unitTest)){
           if(scope.row.unitTest && isPassing(scope.row.unitTest, 'unitTest')){
             scope.isUnitTest = true;
+          } else {
+            scope.isUnitTest = false;
           }
         }
         if(scope.row.hasOwnProperty('functionalTest') && !isEmptyObj(scope.row.functionalTest)){
           if(scope.row.functionalTest && isPassing(scope.row.functionalTest, 'functionalTest')){
+            scope.isfunctionalTest = true;
+          } else {
             scope.isfunctionalTest = true;
           }
         }
@@ -90,15 +97,6 @@ function tableRowDirective() {
       function isEmptyObj(obj) {
         return Object.keys(obj).length === 0 && obj.constructor === Object;
       }
-
-
-      function showChart() {
-        if(scope.state === 'RUNNING' || scope.state === 'PENDING') {
-          return;
-        }
-        scope.isDisplayChart = !scope.isDisplayChart;
-      }
-
     }
   };
 }

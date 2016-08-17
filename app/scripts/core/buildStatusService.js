@@ -13,6 +13,13 @@ function buildStatusService($q) {
 
   var data = [
     {
+      "id": 44,
+      "machine": "Tenrox-R1_1235",
+      "owner": "ajinkya",
+      "time_started": "1471198446",
+      "state": "PENDING"
+    },
+    {
       "id": 1,
       "machine": "Tenrox-R1_1231",
       "owner": "cpeters0",
@@ -113,13 +120,6 @@ function buildStatusService($q) {
         "security": 56,
         "workmanship": 65
       }
-    },
-    {
-      "id": 44,
-      "machine": "Tenrox-R1_1235",
-      "owner": "steel",
-      "time_started": "1471198446",
-      "state": "PENDING"
     }
   ];
 

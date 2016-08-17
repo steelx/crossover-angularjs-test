@@ -36,13 +36,9 @@
           <percentile-num total="row.functionalTest.codeCount" passed="row.functionalTest.passed" ></percentile-num>
         </div>
 
-        <div class="chartBlocks result">
-          <p><b>Result</b></p>
-          <p>
-            <i>Change Accepted</i>
-            <span>Auto Merged</span>
-          </p>
-          <button>Merge Build</button>
+        <div class="chartBlocks">
+          <h4>Result</h4>
+          <result state="row.state" row="row"></result>
         </div>
       </aside>
     </table-row>

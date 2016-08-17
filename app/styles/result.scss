@@ -1,0 +1,47 @@
+.result {
+  position: relative;
+
+  h4 {
+    color: #333333;
+  }
+  p {
+    i {
+      font-size: 12px;
+    }
+    b {
+      font-size: 22px;
+      font-weight: 700;
+    }
+  }
+  > div {
+    position: absolute;
+    width: 120px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+  }
+  button {
+    border: none;
+    background-color: #5E9CD3;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  .passed {
+     p {
+       color: #FCC542;
+     }
+   }
+  .complete {
+    p {
+      color: #304E1E;
+    }
+  }
+  .reject {
+    p {
+      color: #BC010D;
+    }
+  }
+}
