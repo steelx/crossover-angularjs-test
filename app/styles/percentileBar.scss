@@ -1,0 +1,42 @@
+.bar {
+  fill: #98B406;
+  height: 41px;
+  transition: fill .3s ease;
+  cursor: pointer;
+  font-family: Helvetica, sans-serif;
+
+  text {
+    fill: #555;
+  }
+}
+
+.percentileBar {
+  position: absolute;
+  bottom: 5px;
+  width: 90%;
+  margin: 0 5%;
+  svg {
+    background-color: #FFFFD7;
+  }
+  &:hover,
+  &:focus {
+    .bar {
+      fill: #98B406;
+    }
+  }
+
+  > text {
+    font-weight: bold;
+    color: #FFF;
+    margin-bottom: 10px;
+  }
+}
+
+.bar:hover,
+.bar:focus {
+  fill: #506C53 !important;
+
+  text {
+    fill: #FFF;
+  }
+}

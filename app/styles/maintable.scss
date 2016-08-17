@@ -16,7 +16,7 @@
 
   &.running {
     background-color: #6F9EB8;
-    .bar i {
+    .block i {
       background-color: #2D86CA;
     }
   }
@@ -26,7 +26,7 @@
   }
 
   &.accepted {
-    background-color: #4f932b;
+    background-color: #8bc34a;
   }
 
   &.complete {
@@ -35,18 +35,19 @@
 
   &.pending {
     background-color: #EAF6FE;
-    .bar i {
+    .block i {
       background-color: #EAF6FE;
     }
   }
 
-  .bar {
+  .block {
     width: 40px;
     height: 20px;
     background-color: #cccccc;
     display: block;
     position: relative;
     border: 1px solid #333333;
+    margin:2px 0 7px;
 
     & i {
       width: 40px;
@@ -67,6 +68,24 @@
         display: block !important;
         width: 25px;
       }
+    }
+  }
+}
+
+.chartRow {
+
+  .chartBlocks {
+    display: block;
+    position: relative;
+    float: left;
+    width: 18%;
+    height: 250px;
+    border: 2px solid #D8D4B9;
+    margin: 1%;
+    boz-sizing: border-box;
+
+    h4 {
+      padding: 10px 20px;
     }
   }
 }

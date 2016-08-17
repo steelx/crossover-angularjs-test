@@ -1,0 +1,25 @@
+.percentileNum {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+
+  svg {
+    background-color: transparent;
+  }
+
+  text {
+    font-size: 26px;
+    font-weight: bold;
+    color: #FFF;
+    margin-bottom: 10px;
+  }
+}
+
+text:hover,
+text:focus {
+  fill: #506C53 !important;
+}

@@ -1,21 +1,56 @@
 <div class="container-fluid table">
   <div class="row thead">
-    <div class="col-xs-1 col-sm-1">ID</div>
-    <div class="col-xs-1 col-sm-2">Owner</div>
-    <div class="col-xs-2 col-sm-2">Time started</div>
-    <div class="col-xs-2 col-sm-2">State</div>
-    <div class="col-xs-1 col-sm-1">Metrics</div>
-    <div class="col-xs-1 col-sm-1">Build</div>
-    <div class="col-xs-1 col-sm-1">Unit Test</div>
-    <div class="col-xs-1 col-sm-1">Funcational Test</div>
+    <div class="col-sm-1">ID</div>
+    <div class="col-sm-2">Owner</div>
+    <div class="col-sm-2">Time started</div>
+    <div class="col-sm-2">State</div>
+    <div class="col-sm-1">Metrics</div>
+    <div class="col-sm-1">Build</div>
+    <div class="col-sm-1">Unit Test</div>
+    <div class="col-sm-1">Funcational Test</div>
   </div>
   <div>
     <table-row ng-repeat="row in MainTableCtrl.stats" row="row" state="row.state">
-      <aside>
-        <p>{{row.metrics}}</p>
-        <p>{{row.build}}</p>
-        <p>{{row.unitTest}}</p>
-        <p>{{row.functionalTest}}</p>
+      <aside class="chartRow row">
+        <div class="chartBlocks">
+          <h4>Metrics</h4>
+          <metrics test="row.metrics.test" maintainability="row.metrics.maintainability" security="row.metrics.security" workmanship="row.metrics.workmanship"></metrics>
+        </div>
+
+        <div class="chartBlocks">
+          <h4>Build</h4>
+          <ul>
+            <li>
+              debug: {{row.build.debug}}
+            </li>
+            <li>
+              release: {{row.build.release}}
+            </li>
+          </ul>
+        </div>
+
+        <div class="chartBlocks">
+          <h4>Unit test</h4>
+          <pie-chart total="row.unitTest.codeCount" passed="row.unitTest.passed"></pie-chart>
+          <percentile-bar covered="row.unitTest.coveredPercent"></percentile-bar>
+          <percentile-num total="row.unitTest.codeCount" passed="row.unitTest.passed" ></percentile-num>
+        </div>
+
+        <div class="chartBlocks">
+          <h4>Functional test</h4>
+          <pie-chart total="row.functionalTest.codeCount" passed="row.functionalTest.passed"></pie-chart>
+          <percentile-bar total="row.functionalTest.codeCount" passed="row.functionalTest.passed" covered="row.functionalTest.coveredPercent"></percentile-bar>
+          <percentile-num total="row.functionalTest.codeCount" passed="row.functionalTest.passed" ></percentile-num>
+        </div>
+
+        <div class="chartBlocks result">
+          <p><b>Result</b></p>
+          <p>
+            <i>Change Accepted</i>
+            <span>Auto Merged</span>
+          </p>
+          <button>Merge Build</button>
+        </div>
       </aside>
     </table-row>
   </div>

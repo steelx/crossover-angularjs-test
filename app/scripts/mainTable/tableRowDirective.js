@@ -93,6 +93,9 @@ function tableRowDirective() {
 
 
       function showChart() {
+        if(scope.state === 'RUNNING' || scope.state === 'PENDING') {
+          return;
+        }
         scope.isDisplayChart = !scope.isDisplayChart;
       }
 
